@@ -2,8 +2,8 @@ library(foreach)
 library(doParallel)
 library(stringr)
 
-## Function to perform chi-squared tests for LD in parallel
-parallelchi2 <- function(input, N, num_cores = 4) {
+## Function to perform chi-squared tests for LD in parallel.
+parallelchi2 <- function(input_file, N, num_cores = 2) {
   # Import table in the same format as produced by GUSLD function from GUSLD R package.
   LDres <- read.table(input_file, header = TRUE)
   
@@ -20,10 +20,9 @@ parallelchi2 <- function(input, N, num_cores = 4) {
     p <- pchisq(X2, df = 1, lower.tail = FALSE)
     c(X2, p)
   }
-  # Assign the computed values to the respective columns
+  # Assign the computed values to the respective columns and save the results.
   LDres$X2 <- results[, 1]
   LDres$`p-value` <- results[, 2]
-  # Export the results to a text file.
   output_file <- str_replace(input_file, "\\.txt$", "_chi2.txt")
   write.table(LDres, file = output_file, quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
   
