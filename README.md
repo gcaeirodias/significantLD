@@ -24,7 +24,7 @@ N
      Number of loci in the input file.
      [default: NA]
 num_cores
-     Number of threads available to run in parallel.
+     Number of threads to run in parallel.
      [default: 2]
 ~~~
 
@@ -52,7 +52,7 @@ alpha = 0.05
      Significance value considered after multicomparison correction.
      [Default: 0.05]
 num_cores
-     Number of threads available to run in parallel.
+     Number of threads to run in parallel.
      [default: 2]
 ~~~
 
@@ -66,6 +66,7 @@ multi_corr_LD(input_dir = getwd(), num_cores = 2)
 ~~~
 
 ## LD_pairs
+This function executes a series of functions to identify the pairs of loci that are significant across populations. It takes as input the 
 
 ### Arguments
 ~~~
