@@ -13,7 +13,7 @@ This is a set of R functions to perform chi-squared tests on r<sup>2</sup> corre
 This is a function to perform chi-squared tests for r<sup>2</sup> in parallel for a single population.
 
 ### Preparing input files
-`parallelchi2` takes a tab separated text file per population as input in the same format as produced by [GUSLD function from GUSLD R package](https://github.com/AgResearch/GUS-LD).
+`parallelchi2` takes a tab separated text file per population as input in the same format as produced by `GUSLD` function from [GUSLD R package](https://github.com/AgResearch/GUS-LD).
 
 ### Arguments
 ~~~
@@ -66,9 +66,38 @@ multi_corr_LD(input_dir = getwd(), num_cores = 2)
 ~~~
 
 ## LD_pairs
-This function executes a series of functions to identify the pairs of loci that are significant across populations. It takes as input the 
+This function executes a series of functions to identify the pairs of loci that are significantly linked across several populations. It takes as input a set of files outputed by `multi_corr_LD` (one file per population).
+ 
 
 ### Arguments
 ~~~
-
+suffix
+     Input file name suffix common to all input files.
+     [Default: "*_signLD_loci.txt"]
+n_pops
+     Number of populations to consider a locus in linkage across populations.
+     [default: 2]
 ~~~
+
+### Output
+The function `LD_pairs` outputs a tab separated text file named significant_ld_loci.txt with all pairs of loci that LD was significant at least in the number of populations defined by n_pops argument. The file contains five columns; the first two columns are the chromosome name from each locus in the LD pair, the next two columns are the position of the corresponding SNPs, and the last column is the numer of populations where each pair was identified in LD (column names: CHROM_SNP1\tCHROM_SNP2\tPOS_SNP1\tPOS_SNP2\tn).
+
+### Example
+Running `LD_pairs` from the working dirfectory with the input files (i.e., [input_prefix]_signLD_loci.txt; one per population) containing the pairs in LD for each population. A pair is considered in LD if found in significant linkage at least in three populations.
+~~~
+LD_pairs(n_pops = 3)
+~~~
+
+## LD_loci
+
+### Arguments
+
+### Output
+
+### Example
+
+## Citation
+Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2025). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
+
+## Contact
+Send your questions, suggestions, or comments to gcaeirodias@unm.edu
