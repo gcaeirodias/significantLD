@@ -5,9 +5,12 @@ This is a set of R functions to perform chi-squared tests on r<sup>2</sup> corre
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
 
 ## R packages needed
-- foreach
 - doParallel
+- dplyr
+- foreach
+- parallel
 - stringr
+- tidyr (contains dplyr and stringr)
 
 ## parallelchi2
 This is a function to perform chi-squared tests for r<sup>2</sup> in parallel for a single population.
