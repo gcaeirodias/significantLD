@@ -97,7 +97,7 @@ LD_pairs(n_pops = 3)
 ### Example
 
 ## Citation
-Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2025). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
+Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
 
 ## Contact
 Send your questions, suggestions, or comments to gcaeirodias@unm.edu
