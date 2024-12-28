@@ -2,8 +2,8 @@ library(dplyr)
 library(stringr)
 
 # Function to load all files with significant LD loci from all populations (from multi_corr_LD.R).
-load_ld_files <- function(pattern = "*_signLD_loci.txt") {
-  ld_files <- list.files(pattern = pattern, recursive = FALSE)
+load_ld_files <- function(suffix = "*_signLD_loci.txt") {
+  ld_files <- list.files(suffix = suffix, recursive = FALSE)
   if (length(ld_files) == 0) {
     stop("No files found with the pattern:", pattern)
   }
