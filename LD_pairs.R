@@ -59,7 +59,7 @@ save_ld_files <- function(ld_pairs_counts, ld_pairs_across_pops, ld_pairs_across
 }
 
 # Function to run all previous functions sequencially.
-LD_pairs <- function(pattern = "*_signLD_loci.txt", n_pops = 2) {
+LD_pairs <- function(suffix = "*_signLD_loci.txt", n_pops = 2) {
   
   # Step 1: Load files with with significant LD loci.
   ld_data <- load_ld_files(pattern)
