@@ -1,7 +1,7 @@
 library(dplyr)
 library(stringr)
 
-# Function to load all files with corrected chi-squared p-values.
+# Function to load all files with significant LD loci from all populations (from multi_corr_LD.R).
 load_ld_files <- function(pattern = "*_signLD_loci.txt") {
   ld_files <- list.files(pattern = pattern, recursive = FALSE)
   if (length(ld_files) == 0) {
@@ -61,7 +61,7 @@ save_ld_files <- function(ld_pairs_counts, ld_pairs_across_pops, ld_pairs_across
 # Function to run all previous functions sequencially.
 LD_pairs <- function(pattern = "*_signLD_loci.txt", n_pops = 2) {
   
-  # Step 1: Load files with corrected chi-squared p-values.
+  # Step 1: Load files with with significant LD loci.
   ld_data <- load_ld_files(pattern)
   
   # Step 2: Combine significant LD loci from all populations.
