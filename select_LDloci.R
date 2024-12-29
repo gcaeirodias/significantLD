@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyr)
 
 # Define function to identify linked loci with more other loci to remove.
-LD_loci <- function(input_file, output_file) {
+select_LDloci <- function(input_file, output_file) {
   # Read input and format for downstream analysis.
   data <- read.table(input_file, header = TRUE, stringsAsFactors = FALSE)
   data <- data %>%
