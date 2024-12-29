@@ -1,8 +1,10 @@
 # significantLD
-This is a set of R<sup>1</sup> functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provides a pipeline to:
+This is a set of R["[1 '#References']"] functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provides a pipeline to:
 1. Perform chi-squared tests on r<sup>2</sup> correlation coefficients;
 2. Perform multicomaprisions corrections in each population:
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
+
+The "[Section 'Feature']" will be a link to "#Feature"
 
 ## R packages needed
 - doParallel<sup>2</sup>
