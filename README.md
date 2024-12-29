@@ -81,7 +81,7 @@ suffix
      [Default: "*_signLD_loci.txt"]
 
 n_pops
-     Number of populations to consider a locus in linkage across populations.
+     Number of populations needed to consider a locus in linkage across populations.
      [default: 2]
 ~~~
 
@@ -100,11 +100,11 @@ This function creates a list of loci that are significantly linked to a higher n
 ### Arguments
 ~~~
 input_file
-     Input file name outputed by .
+     Name of the input file.
      [Default: "significant_ld_loci.txt"]
 
 output_file
-     Name of the output file containing the list of loci to exclude based on linkage desequilibrium analysis.
+     Name of the output file.
      [Default: "linked_loci_to_remove.txt"]
 ~~~
 
