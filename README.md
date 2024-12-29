@@ -21,14 +21,14 @@ This is a function to perform chi-squared tests for r<sup>2</sup> in parallel fo
 ~~~
 input_file
      Path to tab separated text file in the same format as produced by GUSLD.
-     [default: NA]
+     [Default: NA]
 N
      Number of loci in the input file.
-     [default: NA]
+     [Default: NA]
 
 num_cores
      Number of threads to run in parallel.
-     [default: 2]
+     [Default: 2]
 ~~~
 
 ### Output
@@ -59,7 +59,7 @@ alpha = 0.05
 
 num_cores
      Number of threads to run in parallel.
-     [default: 2]
+     [Default: 2]
 ~~~
 
 ### Output
@@ -83,7 +83,7 @@ suffix
 
 n_pops
      Number of populations needed to consider a locus in linkage across populations.
-     [default: 2]
+     [Default: 2]
 ~~~
 
 ### Output
