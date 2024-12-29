@@ -1,17 +1,15 @@
 # significantLD
-This is a set of R[1](#References) functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provides a pipeline to:
+This is a set of R[[1](#References)] functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provides a pipeline to:
 1. Perform chi-squared tests on r<sup>2</sup> correlation coefficients;
 2. Perform multicomaprisions corrections in each population:
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
 
-The "[Section 'Feature']" will be a link to "#Feature"
-
 ## R packages needed
-- doParallel<sup>2</sup>
-- dplyr<sup>3</sup>
-- foreach<sup>4</sup>
-- stringr<sup>5</sup>
-- tidyr<sup>6</sup>
+- doParallel[[2](#References)]
+- dplyr[[3](#References)]
+- foreach[[4](#References)]
+- stringr[[5](#References)]
+- tidyr[[6](#References)]
 
 ## parallelchi2
 This is a function to perform chi-squared tests for r<sup>2</sup> in parallel for a single population.
