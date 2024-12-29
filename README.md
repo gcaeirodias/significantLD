@@ -5,12 +5,12 @@ This is a set of R functions to perform chi-squared tests on r<sup>2</sup> corre
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
 
 ## R packages needed
-- doParallel
-- dplyr
-- foreach
-- parallel
-- stringr
-- tidyr (contains dplyr and stringr)
+- doParallel<sup>1</sup>
+- dplyr<sup>2</sup>
+- foreach<sup>3</sup>
+- parallel<sup>4</sup>
+- stringr<sup>5</sup>
+- tidyr<sup>6</sup> (contains dplyr and stringr)
 
 ## parallelchi2
 This is a function to perform chi-squared tests for r<sup>2</sup> in parallel for a single population.
@@ -105,12 +105,21 @@ output_file
 ~~~
 
 ### Output
+The function `select_LDloci` outputs a tab separated text file named linked_loci_to_remove.txt with loci to be removed to retain in the dataset unlinked loci only. The file contain two collumns without headers; the first column in the of the chromosome and the second column is the position of the SNP in the chromosome. This file can be used with other tools like VCFtools or BEDtools to remove the loci.
 
 ### Example
+Running `LDpairs` from the working dirfectory containing the input file using the default input and output names.
+~~~
 select_LDloci()
+~~~
 
 ## Citation
 Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
+
+## References
+1.
+2.  [Wickham H, François R, Henry L, Müller K, Vaughan D (2023) dplyr: A Grammar of Data Manipulation. R package version 1.1.4.](https://CRAN.R-project.org/package=dplyr).
+3.  
 
 ## Contact
 Send your questions, suggestions, or comments to gcaeirodias@unm.edu
