@@ -1,16 +1,15 @@
 # significantLD
-This is a set of R functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci. Briefly, the functions provided:
+This is a set of R<sup>1</sup> functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provides a pipeline to:
 1. Perform chi-squared tests on r<sup>2</sup> correlation coefficients;
-2. Perform multicomaprisions corrections in each population;
+2. Perform multicomaprisions corrections in each population:
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
 
 ## R packages needed
-- doParallel<sup>1</sup>
-- dplyr<sup>2</sup>
-- foreach<sup>3</sup>
-- parallel<sup>4</sup>
+- doParallel<sup>2</sup>
+- dplyr<sup>3</sup>
+- foreach<sup>4</sup>
 - stringr<sup>5</sup>
-- tidyr<sup>6</sup> (contains dplyr and stringr)
+- tidyr<sup>6</sup>
 
 ## parallelchi2
 This is a function to perform chi-squared tests for r<sup>2</sup> in parallel for a single population.
@@ -48,12 +47,15 @@ This is a function to perform corrections for multiple comparisons on chi-square
 suffix
      Input file name suffix common to all input files.
      [Default: "*_chi2.txt"]
+
 multi_corr
      The multi-comparison correction method to be used. The options are any method implemented on p.adjust {stats} R function.
      [Default: "bonferroni"]
+
 alpha = 0.05
      Significance value considered after multicomparison correction.
      [Default: 0.05]
+
 num_cores
      Number of threads to run in parallel.
      [default: 2]
@@ -77,6 +79,7 @@ This function executes a series of functions to identify the pairs of loci that 
 suffix
      Input file name suffix common to all input files.
      [Default: "*_signLD_loci.txt"]
+
 n_pops
      Number of populations to consider a locus in linkage across populations.
      [default: 2]
@@ -88,7 +91,7 @@ The function `LDpairs` outputs a tab separated text file named significant_ld_lo
 ### Example
 Running `LDpairs` from the working dirfectory with the input files (i.e., [input_prefix]_signLD_loci.txt; one per population) containing the pairs in LD for each population. A pair is considered in LD if found in significant linkage at least in three populations.
 ~~~
-LD_pairs(n_pops = 3)
+LDpairs(n_pops = 3)
 ~~~
 
 ## select_LDloci
@@ -99,6 +102,7 @@ This function creates a list of loci that are significantly linked to a higher n
 input_file
      Input file name outputed by .
      [Default: "significant_ld_loci.txt"]
+
 output_file
      Name of the output file containing the list of loci to exclude based on linkage desequilibrium analysis.
      [Default: "linked_loci_to_remove.txt"]
@@ -113,13 +117,16 @@ Running `LDpairs` from the working dirfectory containing the input file using th
 select_LDloci()
 ~~~
 
-## Citation
-Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
-
 ## References
-1.
-2.  [Wickham H, François R, Henry L, Müller K, Vaughan D (2023) dplyr: A Grammar of Data Manipulation. R package version 1.1.4.](https://CRAN.R-project.org/package=dplyr).
-3.  
+1. [R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.](https://www.R-project.org/)
+2. [Microsoft Corporation, Weston S (2022) doParallel: Foreach Parallel Adaptor for the 'parallel' Package. R package version 1.0.17.](https://CRAN.R-project.org/package=doParallel)
+3. [Wickham H, François R, Henry L, Müller K, Vaughan D (2023) dplyr: A Grammar of Data Manipulation. R package version 1.1.4.](https://CRAN.R-project.org/package=dplyr)
+4. [Microsoft Corporation, Weston S (2022) foreach: Provides Foreach Looping Construct. R package version 1.5.2.](https://CRAN.R-project.org/package=foreach)
+5. [Wickham H (2023) stringr: Simple, Consistent Wrappers for Common String Operations. R package version 1.5.1.](https://CRAN.R-project.org/package=stringr)
+6. [Wickham H, Vaughan D, Girlich M (2024) tidyr: Tidy Messy Data. R package version 1.3.1.](https://CRAN.R-project.org/package=tidyr)
+
+## Citation
+Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1).
 
 ## Contact
 Send your questions, suggestions, or comments to gcaeirodias@unm.edu
