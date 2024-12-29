@@ -68,7 +68,7 @@ Running `multi_corr_LD` from the working dirfectory with the input files (i.e., 
 multi_corr_LD(input_dir = getwd(), num_cores = 2)
 ~~~
 
-## LD_pairs
+## LDpairs
 This function executes a series of functions to identify the pairs of loci that are significantly linked across several populations. It takes as input a set of files outputed by `multi_corr_LD` (one file per population).
  
 
@@ -83,21 +83,31 @@ n_pops
 ~~~
 
 ### Output
-The function `LD_pairs` outputs a tab separated text file named significant_ld_loci.txt with all pairs of loci that LD was significant at least in the number of populations defined by n_pops argument. The file contains five columns; the first two columns are the chromosome name from each locus in the LD pair, the next two columns are the position of the corresponding SNPs, and the last column is the numer of populations where each pair was identified in LD (column names: CHROM_SNP1\tCHROM_SNP2\tPOS_SNP1\tPOS_SNP2\tn).
+The function `LDpairs` outputs a tab separated text file named significant_ld_loci.txt with all pairs of loci that LD was significant at least in the number of populations defined by n_pops argument. The file contains five columns; the first two columns are the chromosome name from each locus in the LD pair, the next two columns are the position of the corresponding SNPs, and the last column is the numer of populations where each pair was identified in LD (column names: CHROM_SNP1\tCHROM_SNP2\tPOS_SNP1\tPOS_SNP2\tn).
 
 ### Example
-Running `LD_pairs` from the working dirfectory with the input files (i.e., [input_prefix]_signLD_loci.txt; one per population) containing the pairs in LD for each population. A pair is considered in LD if found in significant linkage at least in three populations.
+Running `LDpairs` from the working dirfectory with the input files (i.e., [input_prefix]_signLD_loci.txt; one per population) containing the pairs in LD for each population. A pair is considered in LD if found in significant linkage at least in three populations.
 ~~~
 LD_pairs(n_pops = 3)
 ~~~
 
-## LD_loci
+## select_LDloci
+This function creates a list of loci that are significantly linked to a higher number of other loci and that can be excluded afterwards, maximazing the number of loci retained for downstream analysis. For example, if a locus A is significantly linked to three other loci (B, C, D) but B, C and D are independent the locus A will be included in the list of loci to exclude and the three independent loci are kept in the dataset. In cases where a pair of loci are linked and those loci are not linked to any other loci, one of the locus is removed at random.
 
 ### Arguments
+~~~
+input_file
+     Input file name outputed by .
+     [Default: "significant_ld_loci.txt"]
+output_file
+     Name of the output file containing the list of loci to exclude based on linkage desequilibrium analysis.
+     [Default: "linked_loci_to_remove.txt"]
+~~~
 
 ### Output
 
 ### Example
+select_LDloci()
 
 ## Citation
 Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1). 
