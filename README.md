@@ -25,6 +25,7 @@ input_file
 N
      Number of loci in the input file.
      [default: NA]
+
 num_cores
      Number of threads to run in parallel.
      [default: 2]
