@@ -127,7 +127,7 @@ select_LDloci()
 6. [Wickham H, Vaughan D, Girlich M (2024) tidyr: Tidy Messy Data. R package version 1.3.1.](https://CRAN.R-project.org/package=tidyr)
 
 ## Citation
-Please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1).
+If you use these funtions in your research, please cite the article where these functions were first published: [Caeiro-Dias G, Osborne MJ, Turner TF (2024). Time is of the essence: using archived samples in the development a GT-seq panel to preserve continuity of ongoing genetic monitoring. Authorea](https://doi.org/10.22541/au.173501104.41338406/v1).
 
 ## Contact
 Send your questions, suggestions, or comments to gcaeirodias@unm.edu
