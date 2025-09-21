@@ -46,7 +46,7 @@ count_ld_pairs <- function(ld_pairs_sorted) {
 
 # Function to filter pairs that are found in at least 'n_pops' populations.
 filter_ld_pairs_by_pop <- function(ld_pairs_counts, n_pops) {
-  ld_pairs_across_pops <- subset(ld_pairs_counts, rowSums(ld_pairs_counts[5] == n_pops) > 0)
+  ld_pairs_across_pops <- subset(ld_pairs_counts, rowSums(ld_pairs_counts[5] >= n_pops) > 0)
   return(ld_pairs_across_pops)
 }
 
