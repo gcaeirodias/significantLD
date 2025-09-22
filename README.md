@@ -1,7 +1,7 @@
 # significantLD
 This is a set of R[[1](#References)] functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provide a pipeline to:
 1. Perform chi-squared tests on r<sup>2</sup> correlation coefficients;
-2. Perform multicomaprisions corrections in each population:
+2. Perform multi-comaprisions corrections in each population:
 3. Identify putative linked loci in each population and across populations based on corrected chi-squeared tests.
 
 ## R packages needed
@@ -63,7 +63,7 @@ num_cores
 ~~~
 
 ### Output
-The function `multi_corr_LD` produces two outputs for each input used. First, it outputs the input tab separated text file with one extra column containing the adjusted p-values (Adjusted_p) named with the same prefix and the suffix _chi2_corr.txt. The second output is a file with the subset of significant loci obtained from the first output named with the same prefix and the suffix _signLD_loci.txt. 
+The function `multi_corr_LD` produces two outputs for each input used. First, it outputs the input tab separated text file with one extra column containing the adjusted p-values (Adjusted_p) named with the same prefix and the suffix '_chi2_corr.txt'. The second output is a file with the subset of significant loci obtained from the first output named with the same prefix and the suffix '_signLD_loci.txt'. 
 
 ### Example
 Running `multi_corr_LD` from the working dirfectory with the input files (i.e., [input_prefix]_chi2.txt; one per population) containing the chi-squared test results and associated p-values with 2 threads.
