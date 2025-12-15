@@ -1,4 +1,4 @@
-# significantLD
+# significantLD ([DOI: 10.5281/zenodo.17915458](https://zenodo.org/records/17915458))
 This is a set of R[[1](#References)] functions to perform chi-squared tests on r<sup>2</sup> correlation coefficients between pairs of loci (Linkage Disequilibrium) and to identify potentially linked loci across populations. Briefly, the functions provide a pipeline to:
 1. Perform chi-squared tests on r<sup>2</sup> correlation coefficients;
 2. Perform multi-comaprisions corrections in each population:
